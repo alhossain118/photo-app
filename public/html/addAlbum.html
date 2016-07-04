@@ -1,0 +1,66 @@
+<h1>add Album</h1>
+
+<form ng-submit='submitAlbum(album)'>
+
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" ng-model='album.name'>
+  </div>
+
+
+
+
+
+
+<button class='btn btn-primary glyphicon glyphicon-thumbs-up'>Add Property <span class='glyphicon glyphicon-blackboard'></span></button>
+</form>
+
+<table class='table'>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+    <th>Edit/Delete</th>
+
+  </tr>
+</thead>
+<tbody>
+  <tr ng-repeat='album in albumsArray track by $index'>
+    <td>{{album.name}}</td>
+    <td>{{album.email}}</td>
+    <td>
+      <button class='btn btn-warning' ng-click='editAlbum(album,$index)'><span class='glyphicon glyphicon-ok'></span></button>
+      <button class='btn btn-danger' ng-click='removeAlbum(album._id,$index)'><span class='glyphicon glyphicon-remove'></span></button>
+    </td>
+
+
+  </tr>
+
+</tbody>
+
+<tfoot>
+
+
+</tfoot>
+</table>
+
+<form ng-submit='submitAlbumEdit(editAlbumObject)' ng-hide='boolCheck'>
+
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" ng-model='editAlbumObject.name'>
+  </div>
+
+  <div class="form-group">
+    <label>Phone Number:</label>
+    <input type="text" class="form-control" ng-model='editAlbumObject.number'>
+  </div>
+
+  <div class="form-group">
+    <label>Email:</label>
+    <input type="text" class="form-control" ng-model='editAlbumObject.email'>
+  </div>
+
+
+<button class='btn btn-primary glyphicon glyphicon-thumbs-up'>Add Property <span class='glyphicon glyphicon-blackboard'></span></button>
+</form>

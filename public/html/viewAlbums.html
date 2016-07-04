@@ -1,0 +1,11 @@
+<div class="form-group">
+             <label>Select Album</label>
+             <select ng-model="selectedAlbumId">
+               <option ng-repeat="album in products" ng-value="album._id">{{album.name}}</option>
+             </select>
+</div>
+
+<div ng-repeat='photo in photoArray track by $index'>
+  <img ng-src="{{photo.name}}"  />
+  <button class='btn btn-danger' ng-click='removePhoto(photo._id,$index)'><span class='glyphicon glyphicon-remove'></span></button>
+</div>
